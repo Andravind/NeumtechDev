@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NeumtechTest</string>
+    <string name="google_maps_api_key">AIzaSyBRKJrWrBJRvQWb17GaDr67MyrT-MWXrbw</string>
+    <string-array name="dash_items">
+        <item>List View</item>
+        <item>Map View</item>
+    </string-array>
+</resources>
