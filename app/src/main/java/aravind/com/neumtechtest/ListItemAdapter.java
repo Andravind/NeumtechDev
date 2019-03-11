@@ -13,6 +13,7 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
 
     public ListItemAdapter(Context mContext) {
         this.mContext = mContext;
+
     }
 
     @NonNull
@@ -33,6 +34,7 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
         }
