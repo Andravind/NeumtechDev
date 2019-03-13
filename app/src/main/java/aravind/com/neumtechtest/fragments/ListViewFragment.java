@@ -1,4 +1,4 @@
-package aravind.com.neumtechtest;
+package aravind.com.neumtechtest.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,11 +11,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import aravind.com.neumtechtest.R;
+import aravind.com.neumtechtest.constants.Singleton;
+import aravind.com.neumtechtest.adapters.ListItemAdapter;
+import aravind.com.neumtechtest.interfaces.onItemSelectedListener;
+
 public class ListViewFragment extends Fragment {
 
     private Context mContext;
     private RecyclerView recyclerView;
     private ListItemAdapter mLstAdapter;
+    private onItemSelectedListener onItemSelectedListener;
 
     @Override
     public void onAttach(Context context) {
@@ -29,8 +35,19 @@ public class ListViewFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.list_main, container, false);
         recyclerView = rootView.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mLstAdapter = new ListItemAdapter(mContext);
+        mLstAdapter = new ListItemAdapter(mContext, Singleton.getInstance().getJobInfoModels(), new ListItemAdapter.onItemSelected() {
+            @Override
+            public void onItemSelected(int position) {
+                if (onItemSelectedListener != null)
+                    onItemSelectedListener.onItemSelectedLister(position);
+
+            }
+        });
         recyclerView.setAdapter(mLstAdapter);
         return rootView;
+    }
+
+    public void setListener(onItemSelectedListener onItemSelectedListener) {
+        this.onItemSelectedListener = onItemSelectedListener;
     }
 }
