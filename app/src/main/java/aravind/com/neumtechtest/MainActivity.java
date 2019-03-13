@@ -36,26 +36,32 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewpager);
         tabLayout.setupWithViewPager(viewPager);
+        List<JobInfoModel> lstJobInfo = new ArrayList<>();
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
+        lstJobInfo.add(new JobInfoModel("Lorem Ipsum", "Lorem Ipsum", 12.972442, 77.580643, "bvnbsdvhsbdv"));
         String[] mDashboardTabNames = mContext.getResources().getStringArray(R.array.dash_items);
         viewPager.setOffscreenPageLimit(mDashboardTabNames.length);
         mDashBoardViewPagerAdapter = new DashBoardViewPagerAdapter(getSupportFragmentManager(), mContext, mDashboardTabNames.length);
         for (String tabName : mDashboardTabNames)
             mDashBoardViewPagerAdapter.addFragment(tabName);
         viewPager.setAdapter(mDashBoardViewPagerAdapter);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                viewPager.setCurrentItem(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        });
     }
 }
